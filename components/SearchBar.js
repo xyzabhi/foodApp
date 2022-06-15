@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, TextInput, Text, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
+  const [close, setClose] = useState(false);
   return (
     <View style={styles.backgroundStyle}>
       <Feather name="search" style={styles.iconStyle} />
@@ -33,6 +34,11 @@ const styles = StyleSheet.create({
   },
   iconStyle: {
     fontSize: 32,
+    alignSelf: "center",
+    marginHorizontal: 10,
+  },
+  closeIcon: {
+    fontSize: 24,
     alignSelf: "center",
     marginHorizontal: 10,
   },
